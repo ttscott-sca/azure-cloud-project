@@ -84,12 +84,31 @@ Use either the portal's auto-instrumentation or this code-level option, not both
 
 ## Screenshots
 
-| | |
-|---|---|
-| ![Resource group](screenshots/Resource%20Group%20Overview.png) | ![App Service](screenshots/App%20Service%20Overview.png) |
-| ![Deployment Center](screenshots/Deployment%20Center.png) | ![Application Insights](screenshots/Application%20Insights.png) |
-| ![Running website](screenshots/Running%20Website.png) | |
+### Live site
 
+![Status page](screenshots/Running%20Website.png)
+
+The status page served by the Flask app on Azure App Service, with the health badge and runtime details.
+
+### Deployment pipeline
+
+![Passing pipeline run](screenshots/Pipeline%20Run.png)
+
+A successful GitHub Actions run after the App Service was hardened: sign-in to Azure with OIDC, deploy, then a smoke test against the live site.
+
+![Deployment Center](screenshots/Deployment%20Center.png)
+
+Deployment history in the Azure Deployment Center, from the first deployments.
+
+### Security
+
+![App Service security settings](screenshots/Security%20Settings.png)
+
+FTP disabled, HTTPS only turned on, and a minimum TLS version of 1.2.
+
+![CodeQL scan](screenshots/CodeQL%20Scan.png)
+
+A passing CodeQL code-scanning run.
 ## Skills demonstrated
 
 - Azure resource management (resource groups, App Service, App Service Plans)
