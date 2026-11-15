@@ -100,7 +100,7 @@ A successful GitHub Actions run after the App Service was hardened: sign-in to A
 
 Deployment history in the Azure Deployment Center, from the first deployments.
 
-### Security
+### Security settings and scanning
 
 ![App Service security settings](screenshots/Security%20Settings.png)
 
