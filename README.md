@@ -100,6 +100,16 @@ A successful GitHub Actions run after the App Service was hardened: sign-in to A
 
 Deployment history in the Azure Deployment Center, from the first deployments.
 
+### Azure resources
+
+![Azure resource group](screenshots/Resource%20Group%20Overview.png)
+
+The resource group that holds the App Service, its plan, Application Insights and the managed identities.
+
+![App Service overview](screenshots/App%20Service%20Overview.png)
+
+The App Service running Python 3.12, with a healthy health check and a successful deployment from GitHub.
+
 ### Security settings and scanning
 
 ![App Service security settings](screenshots/Security%20Settings.png)
@@ -109,6 +119,7 @@ FTP disabled, HTTPS only turned on, and a minimum TLS version of 1.2.
 ![CodeQL scan](screenshots/CodeQL%20Scan.png)
 
 A passing CodeQL code-scanning run.
+
 ## Skills demonstrated
 
 - Azure resource management (resource groups, App Service, App Service Plans)
@@ -123,9 +134,10 @@ A passing CodeQL code-scanning run.
 
 This project gave hands-on experience deploying and managing a web application in Azure: cloud resource management, GitHub integration, application monitoring and troubleshooting service availability. Adding tests, a smoke test and security hardening showed how much of running a cloud app is about verifying it stays healthy and secure after it ships, not just getting it online.
 
+Moving the app from Python 3.10 to 3.12 also taught me that App Service builds the app under the runtime version in place at deploy time. Changing the stack setting without redeploying stopped the site (exit code 127, container failed to start), the health check showed it as unhealthy right away, and redeploying through the pipeline fixed it.
+
 ## Next steps
 
 - Define the infrastructure as code (Bicep or Terraform) so the whole environment can be rebuilt from the repo
 - Add an Application Insights alert for failed requests and slow responses
-- Move the App Service to Python 3.12 or newer (3.10 reached end of life in October 2026) and update the workflow to match
 - Add a staging slot and swap for zero-downtime releases
